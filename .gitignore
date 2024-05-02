@@ -1,0 +1,6 @@
+# Ignore PyTorch and TorchVision libraries
+torch/
+torchvision/
+
+# Ignore the exported ONNX model file
+/path/to/your/output/model.onnx
