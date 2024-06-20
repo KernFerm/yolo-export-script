@@ -1,6 +1,9 @@
 # PyTorch Model Export to ONNX
 
 This repository contains a simple Python script (`ptonnx.py`) to export a PyTorch model to the ONNX format.
+                        ```bash
+                          the ptonnx.py has to stay the same name
+                        ```
 
 ## how to download the repo first time users
 
