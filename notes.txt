@@ -1,0 +1,8 @@
+
+# if you want to use the amd gpu instead of cpu 
+use ptonnx2.py
+- make sure to have ROCM5 installed and configured properly " For AMD GPU USERS "
+( Bubbles The Dev ) - I main with Nvidia 
+
+
+pip install torch torchvision -f https://download.pytorch.org/whl/rocm5.0/torch_stable.html
