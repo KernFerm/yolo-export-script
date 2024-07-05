@@ -14,6 +14,9 @@ This repository contains a simple Python script (`ptonnx.py`) to export a PyTorc
 - Python installed on your system
 - PyTorch and torchvision libraries installed (`torch`, `torchvision`)
 
+- if you `DO NOT` have pet python , you can get one here [Pet Python V3.11.6](https://github.com/KernFerm/Py3.11.6installer)
+- use the `requirements.bat` to install the dependencies
+
 ## Usage
 
 1. Clone this repository to your local machine:
