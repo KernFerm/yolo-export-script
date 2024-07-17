@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
-echo Installing required Python packages...
+echo Installing required Python packages for YOLOv5...
 
 REM Check if Python is installed
 echo Checking if Python is installed...
@@ -46,9 +46,21 @@ if %progress% lss 100 (
 )
 echo Pip upgraded successfully.
 
-REM Install the required packages
-echo Installing the required packages...
-pip install torch>=1.9.0 torchvision>=0.10.0 torchaudio>=0.9.0 ultralytics > nul 2>&1
+REM Clone YOLOv5 repository
+echo Cloning YOLOv5 repository...
+git clone https://github.com/ultralytics/yolov5.git > nul 2>&1
+IF %ERRORLEVEL% NEQ 0 (
+    echo Failed to clone YOLOv5 repository.
+    exit /b 1
+)
+echo YOLOv5 repository cloned successfully.
+
+REM Change directory to YOLOv5
+cd yolov5
+
+REM Install YOLOv5 requirements
+echo Installing YOLOv5 requirements...
+pip install -r requirements.txt > nul 2>&1
 
 REM Simulate progress bar for installing packages
 set /A progress=0
@@ -64,7 +76,7 @@ echo Packages installed successfully.
 
 REM Deactivate the virtual environment
 echo Deactivating virtual environment...
-deactivate
+deactivate > nul 2>&1
 IF %ERRORLEVEL% NEQ 0 (
     echo Failed to deactivate virtual environment.
     exit /b 1
