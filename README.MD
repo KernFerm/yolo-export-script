@@ -11,7 +11,7 @@ The PT to ONNX Converter leverages PyTorch's and ONNX's powerful libraries to au
 ### Dependencies
 
 - [Python 3.11.6](https://github.com/KernFerm/Py3.11.6installer) 
-- PyTorch 2.0.1
+- PyTorch 2.3.1
 - ONNX 1.14.0
 - argparse for command-line options
 
