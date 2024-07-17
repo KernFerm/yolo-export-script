@@ -5,8 +5,14 @@ import torchvision  # PyTorch vision library
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f'Using device: {device}')
 
-# Load the PyTorch model
-model = torchvision.models.resnet18(pretrained=True).to(device)    # Load the pretrained model and move it to the device
+# Load the PyTorch model architecture
+model = torchvision.models.resnet18(pretrained=False)  # Use the appropriate architecture
+
+# Load the model state dictionary from the .pt file
+model.load_state_dict(torch.load("path/to/your/model_checkpoint.pt", map_location=device))
+
+# Move the model to the device
+model.to(device)
 
 # Set the model to evaluation mode
 model.eval()    # Set the model to evaluation mode
@@ -23,3 +29,4 @@ torch.onnx.export(model,                     # PyTorch model
                   do_constant_folding=True, # Optimize constant folding 
                   input_names=['input'],    # Input names                  
                   output_names=['output'])  # Output names
+
