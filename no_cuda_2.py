@@ -4,10 +4,7 @@ import argparse
 
 def load_model(pt_file_path):
     device = torch.device('cpu')
-    model = torch.load(pt_file_path, map_location=device)
-    if isinstance(model, dict):  # Check if the loaded model is a state_dict
-        model = torch.nn.Module()  # Create a generic module
-        model.load_state_dict(model)  # Load the state dictionary into the module
+    model = torch.load(pt_file_path, map_location=device)  # Load the model directly
     return model
 
 def detect_input_size(model):
@@ -18,7 +15,8 @@ def detect_input_size(model):
 def convert_to_onnx(model, onnx_file_path):
     input_size = detect_input_size(model)
     dummy_input = torch.randn(1, *input_size[1:])
-    torch.onnx.export(model, dummy_input, onnx_file_path)
+    torch.onnx.export(model, dummy_input, onnx_file_path, input_names=['input'], output_names=['output'], opset_version=11)
+    print(f"Model successfully converted to ONNX and saved at {onnx_file_path}")
 
 def main():
     parser = argparse.ArgumentParser(description="Convert PyTorch model to ONNX")
