@@ -7,6 +7,7 @@ This repository contains a script to load and export YOLO models using the Ultra
 - **GPU Detection**: Automatically detects and uses NVIDIA and AMD GPUs if available.
 - **Multiple Export Formats**: Supports exporting the YOLO model to various formats.
 - **Robust Error Handling**: Includes comprehensive error handling and logging.
+- `**YOLO V5 & YOLO V8 Only**`
 
 ## Prerequisites
 
