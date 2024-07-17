@@ -1,3 +1,6 @@
+### Getting Updated ( trying to make it better )
+### If you want to help make it better , please contact me or create a issue to let me know. thanks
+
 # PT to ONNX Converter
 
 This project provides a simple yet effective tool for converting PyTorch models (`.pt`) to the ONNX format (`.onnx`). It's designed for developers and researchers who work with neural networks and need a straightforward way to transition between these two popular formats.
