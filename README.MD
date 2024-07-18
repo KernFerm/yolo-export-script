@@ -218,3 +218,8 @@ if __name__ == "__main__":
     main()
 
 ```
+
+
+## LICENSE
+
+- `MIT` [License Agreement](https://github.com/KernFerm/yolo-export-script/blob/main/LICENSE)
