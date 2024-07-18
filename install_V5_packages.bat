@@ -74,14 +74,8 @@ if %progress% lss 100 (
 )
 echo Packages installed successfully.
 
-REM Deactivate the virtual environment
-echo Deactivating virtual environment...
-deactivate > nul 2>&1
-IF %ERRORLEVEL% NEQ 0 (
-    echo Failed to deactivate virtual environment.
-    exit /b 1
-)
-echo Virtual environment deactivated.
+REM Inform user to manually deactivate virtual environment
+echo Installation completed. To deactivate the virtual environment, simply close this command prompt or run `deactivate` if you are in a virtual environment.
 
 endlocal
 exit /b 0
