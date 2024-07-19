@@ -212,9 +212,8 @@ if __name__ == "__main__":
 ```
 
 
-## Contributors
-
-- @hamsterdog6 , thank you for the tiny snippet you provide to make this project come alive
+## Special Thanks
+- @hamsterdog6, thank you for the tiny snippet you provided to make this project come alive.
 
 ```
 from ultralytics import YOLO
