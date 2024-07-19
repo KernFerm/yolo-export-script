@@ -213,7 +213,7 @@ if __name__ == "__main__":
 
 
 ## Special Thanks
-- @hamsterdog6, thank you for the tiny snippet you provided to make this project come alive.
+- [@hamsterdog6](https://github.com/hamsterdog6), thank you for the tiny snippet you provided to make this project come alive.
 
 ```
 from ultralytics import YOLO
