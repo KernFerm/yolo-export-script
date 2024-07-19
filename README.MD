@@ -8,7 +8,7 @@ This repository contains a script to load and export YOLO models using the Ultra
 - **Multiple Export Formats**: Supports exporting the YOLO model to various formats.
 - **Robust Error Handling**: Includes comprehensive error handling and logging.
 - **`YOLO V5 & YOLO V8 Only`**
-_ **`PT 2 ONNX FORMAT`**
+- **`PT 2 ONNX FORMAT`**
 
 ## Prerequisites
 
