@@ -1,38 +1,63 @@
 @echo off
 setlocal enabledelayedexpansion
 
+REM Function to check and handle errors
+:check_error
+if %errorlevel% neq 0 (
+    echo Error occurred: %1
+    call :cleanup
+    exit /b %errorlevel%
+)
+
+REM Function to clean up in case of failure
+:cleanup
+if exist venv (
+    echo Cleaning up...
+    rmdir /s /q venv
+)
+goto :EOF
+
+REM Function to print progress bar
+:print_progress_bar
+setlocal
+set /A progress=%1
+set message=%2
+set bar=
+for /L %%G in (1,1,%progress%) do (
+    set bar=!bar!#
+)
+for /L %%G in (%progress%,1,100) do (
+    set bar=!bar!-
+)
+<nul set /p =[%bar%] %progress%%% - %message%
+echo(
+endlocal
+goto :EOF
+
 echo Installing required Python packages for YOLOv5...
 
 REM Check if Python is installed
 echo Checking if Python is installed...
 python --version >nul 2>&1
-IF %ERRORLEVEL% NEQ 0 (
-    echo Python is not installed. Please install Python and try again.
-    exit /b 1
-)
+call :check_error "Python is not installed. Please install Python and try again."
 echo Python is installed.
 
 REM Create a virtual environment
 echo Creating virtual environment...
 python -m venv venv
-IF %ERRORLEVEL% NEQ 0 (
-    echo Failed to create virtual environment.
-    exit /b 1
-)
+call :check_error "Failed to create virtual environment."
 echo Virtual environment created successfully.
 
 REM Activate the virtual environment
 echo Activating virtual environment...
 call venv\Scripts\activate.bat
-IF %ERRORLEVEL% NEQ 0 (
-    echo Failed to activate virtual environment.
-    exit /b 1
-)
+call :check_error "Failed to activate virtual environment."
 echo Virtual environment activated.
 
 REM Upgrade pip to the latest version
 echo Upgrading pip to the latest version...
 pip install --upgrade pip > nul 2>&1
+call :check_error "Failed to upgrade pip."
 
 REM Simulate progress bar for upgrading pip
 set /A progress=0
@@ -49,10 +74,7 @@ echo Pip upgraded successfully.
 REM Clone YOLOv5 repository
 echo Cloning YOLOv5 repository...
 git clone https://github.com/ultralytics/yolov5.git > nul 2>&1
-IF %ERRORLEVEL% NEQ 0 (
-    echo Failed to clone YOLOv5 repository.
-    exit /b 1
-)
+call :check_error "Failed to clone YOLOv5 repository."
 echo YOLOv5 repository cloned successfully.
 
 REM Change directory to YOLOv5
@@ -61,6 +83,7 @@ cd yolov5
 REM Install YOLOv5 requirements
 echo Installing YOLOv5 requirements...
 pip install -r requirements.txt > nul 2>&1
+call :check_error "Failed to install YOLOv5 requirements."
 
 REM Simulate progress bar for installing packages
 set /A progress=0
@@ -79,19 +102,3 @@ echo Installation completed. To deactivate the virtual environment, simply close
 
 endlocal
 exit /b 0
-
-:print_progress_bar
-setlocal
-set /A progress=%1
-set message=%2
-set bar=
-for /L %%G in (1,1,%progress%) do (
-    set bar=!bar!#
-)
-for /L %%G in (%progress%,1,100) do (
-    set bar=!bar!-
-)
-<nul set /p =[%bar%] %progress%%% - %message%
-echo(
-endlocal
-goto :EOF
