@@ -73,7 +73,7 @@ echo Pip upgraded successfully.
 
 REM Install the required packages
 echo Installing the required packages...
-pip install torch>=1.9.0 torchvision>=0.10.0 torchaudio>=0.9.0 ultralytics==8.0.0 > nul 2>&1
+pip install torch>=1.9.0 torchvision>=0.10.0 torchaudio>=0.9.0 ultralytics==8.2.79 > nul 2>&1
 call :check_error "Failed to install one or more packages."
 
 REM Simulate progress bar for installing packages
@@ -90,6 +90,8 @@ echo Packages installed successfully.
 
 REM Inform user to manually deactivate virtual environment
 echo Installation completed. To deactivate the virtual environment, simply close this command prompt or run `deactivate` if you are in a virtual environment.
+
+pause
 
 endlocal
 exit /b 0
