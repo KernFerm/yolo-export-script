@@ -100,5 +100,7 @@ echo Packages installed successfully.
 REM Inform user to manually deactivate virtual environment
 echo Installation completed. To deactivate the virtual environment, simply close this command prompt or run `deactivate` if you are in a virtual environment.
 
+pause
+
 endlocal
 exit /b 0
