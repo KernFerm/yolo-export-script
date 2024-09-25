@@ -1,3 +1,8 @@
+## Support the Project ⭐
+
+If you find this project useful, please give it a star! Your support is appreciated and helps keep the project growing. 🌟
+
+
 # YOLO Model Export Script
 
 This repository contains a script to load and export YOLO models using the Ultralytics library. The script can detect and utilize NVIDIA and AMD GPUs to accelerate the process. The supported export formats include `ONNX`, `TorchScript`, `CoreML`, `TFLite`, and `TFJS`.
